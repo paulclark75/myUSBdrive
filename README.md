@@ -2,10 +2,8 @@
 <h1>Share a USB drive using a Raspberry Pi, for Free</h1>
 <h2)Share or stream your files with any Windows, Mac, Linux, iOS or Android device on your Home network or over the Internet. 
 Know where in the 'Cloud' your files are securely located!</h2>
-
-Follow these 3 easy steps to share a USB Hard Drive on your home network.  
- 
 <h2>Simply Works 'out of the box'</h2>
+Follow these 3 easy steps to share a USB Hard Drive on your home network.  
 <ul>
   <li>01 DOWNLOAD</li>
 Download myUSBdrive
