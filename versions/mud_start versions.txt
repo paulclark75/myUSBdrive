@@ -1,0 +1,26 @@
+
+
+mud_start_v3.py
+===============
+The status LED connection moved from pin 13 (GPIO 27) to pin 40 (GPIO 21). LED ground connection moved from pin 20 to 39 for convenience
+The status now is now an Heartbeat when the USB drive is connected. This is one small quick flash followed by one longer flash that gets brighter then dims down again, to simulate a heartbeat.
+
+
+mud_start_v4.py
+===============
+Installed "PIP" and "Requests" so that the connection to the network could be checked.
+Added testing that the services "avahi" and "smdb" (samba) are running. 
+Added checking that the Raspberry Pi is connected by testing that and URL (hostname) is reachable.
+When the shutdown switch is held in to 6 seconds (approx.) the status LED flashes 10 times after the USD drive is un-mounted to give it time to spin down before power is removed.
+If connected, the status LED flashes to show to health of MUD:
+
+ - 1 flash: everything is running but waiting for the USB drive to be connected.
+ - 2 flashes: This is the Heartbeat signal. This indicated that everything is running and that the USB drive is connected
+ - 3 flashes: The "avahi" service is not running. This means that the Raspberry Pi will not be reachable by using its host name (mud) on the network.
+ - 4 flashes: The Raspberry Pi is not connected to the Internet or to the local network. See note below
+ - 5 flashes: The "samba" service is not running. This service is called "smbd" in Raspian. This means that the USB drive share will not be reachable.
+
+Connected status
+The Raspberry Pi monitors the state of the connection to the Internet or to the local network. By default, it will try to connect to https://google.com to test its connection to the network, but MUD does not require Internet connection if it is only being accessed at home on the local network. The URL of the site being checked can be changed to the IP address of the local router if Internet connection is not required. This can be done by editing the file mud_start.py and changing the value of the variable "hostname"
+
+hostname = "https://google.com"
