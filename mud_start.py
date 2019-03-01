@@ -15,9 +15,7 @@ fanPin = 17 # The pin ID, edit here to change it
 switchSensPin = 18
 ledPin = 21
 hostname = "https://google.com"
-
 desiredTemp = 45 # The maximum temperature in Celsius after which we trigger the fan
-
 fanSpeed=100
 sum=0
 pTemp=15
